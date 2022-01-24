@@ -29,7 +29,16 @@ class App extends Component {
       };
     });
   };
-
+  componentDidMount() {
+    const contacts = localStorage.getItem("contacts");
+    const parsedContacts = JSON.parse(contacts);
+    this.setState({ contacts: parsedContacts });
+  }
+  componentDidUpdate(_, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
   filterHandler = (event) => {
     this.setState({ filter: event.currentTarget.value });
   };
