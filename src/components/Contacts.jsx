@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { FormText, FormList, FormListItem, FormBtn } from "./Phonebook.styled";
 
 const Contacts = ({ contacts, deleteContact }) => {
@@ -23,9 +23,9 @@ const Contacts = ({ contacts, deleteContact }) => {
     </Fragment>
   );
 };
-Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
-  deleteContact: PropTypes.func,
-};
+// Contacts.propTypes = {
+//   contacts: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+//   deleteContact: PropTypes.func,
+// };
 
 export default Contacts;
